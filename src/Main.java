@@ -67,6 +67,7 @@ public class Main {
                         String comuna = validData("^[a-zA-Z0-9]{1,50}$","Ingrese comuna: ","Comuna inválida intente nuevamente (Debe tener máximo 50 caracteres).");
                         Cliente cliente = new Cliente(nombre,fechaNacFormat,rut,apellido,Integer.parseInt(telefono),afp,Integer.parseInt(salud),direccion,comuna);
                         contenedor.almacenarCliente(cliente);
+                        System.out.println(rut);
                         System.out.println("Cliente almacenado con éxito.");
                         break;
                     case 2:
