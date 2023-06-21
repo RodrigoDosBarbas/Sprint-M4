@@ -70,10 +70,27 @@ public class Main {
                         System.out.println("Cliente almacenado con éxito.");
                         break;
                     case 2:
-                        System.out.println("Has seleccionado la opcion 2");
+                    	String nombrePro = validData("^[a-zA-Z0-9]{10,50}$","Ingrese nombre: ","Nombre inválido intente nuevamente (Debe ser entre 10 y 50 caracteres).");
+                        String fechaNacPro = validData("^(0[1-9]|1\\d|2\\d|3[01])/(0[1-9]|1[0-2])/(\\d{4})$","Ingrese fecha de nacimiento: ", "Debe ingresar una fecha válida según formato DD/MM/AAAA");
+                        Date fechaNacFormatPro = formatter.parse(fechaNacPro);
+                        String rutPro = validData("^(?:(?:[0-9]{1,2}(?:\\.[0-9]{3}){0,2})|[0-9]{1,7})$","Ingrese RUT: ", "Rut inválido, intente nuevamente, debe ingresar el rut con puntos y sin dígito verificador.");
+                        String titulo = validData("^[a-zA-Z0-9]{10,50}$","Ingrese título: ","Título inválido, intente nuevamente (Debe ser entre 10 y 50 caracteres).");
+                        String fechaIngreso = validData("^(0[1-9]|1\\d|2\\d|3[01])/(0[1-9]|1[0-2])/(\\d{4})$","Ingrese fecha de ingreso: ", "Debe ingresar una fecha válida según formato DD/MM/AAAA");
+                        Date fechaIngresoFormat = formatter.parse(fechaIngreso);
+                        Profesional profesional = new Profesional(nombrePro,fechaNacFormatPro,rutPro,titulo,fechaIngresoFormat);
+                        contenedor.almacenarProfesional(profesional);
+                        System.out.println("Profesional almacenado con éxito.");
                         break;
                     case 3:
-                        System.out.println("Has seleccionado la opcion 3");
+                    	String nombre2 = validData("^[a-zA-Z0-9]{10,50}$","Ingrese nombre: ","Nombre inválido intente nuevamente (Debe ser entre 10 y 50 caracteres).");
+	                  	String fechaNac2 = validData("^(0[1-9]|1\\d|2\\d|3[01])/(0[1-9]|1[0-2])/(\\d{4})$","Ingrese fecha de nacimiento: ", "Debe ingresar una fecha válida según formato DD/MM/AAAA");
+	                  	Date fechaNac2Format = formatter.parse(fechaNac2);
+	                  	String rut2 = validData("^(?:(?:[0-9]{1,2}(?:\\.[0-9]{3}){0,2})|[0-9]{1,7})$","Ingrese RUT: ", "Rut inválido, intente nuevamente, debe ingresar el rut con puntos y sin dígito verificador.");
+	                  	String area = validData("^[a-zA-Z0-9]{1,70}$","Ingrese area: ","area inválida, intente nuevamente (Debe tener máximo 20 caracteres).");
+	                    String experiencia = validData("^[a-zA-Z0-9]{5,30}$","Ingrese experiencia previa: ","experiencia previa inválida, intente nuevamente (Debe ser max 100 caracteres).");
+	                    Administrativo administrativo = new Administrativo(nombre2, fechaNac2Format, rut2, area, experiencia);
+	                    contenedor.almacenarAdministrativo(administrativo);
+	                    System.out.println("Administrativo almacenado con exito.");
                         break;
                     case 4:
                         String identificador = validData("^[0-9]+$","Ingrese el número identificador: ","número identificador inválido (Debe ser entre 3 y 50 caracteres).");
