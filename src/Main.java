@@ -102,8 +102,6 @@ public class Main {
                             String hora = validData("^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])$", "Ingrese la hora de la capacitación (formato HH:MM): ", "Hora inválida. Debe ser una hora válida en formato HH:MM.");
                             String lugar = validData("^[a-zA-Z0-9\\s]{10,50}$", "Ingrese el lugar de la capacitación: ", "Lugar inválido. Debe tener entre 10 y 50 caracteres alfanuméricos.");
                             String lugarSinEspacios = lugar.replaceAll("\\s", "");
-                            System.out.println(lugar.length());
-                            System.out.println(lugarSinEspacios.length());
                             String duracion = validData("^[a-zA-Z0-9\\s]{1,70}$","Ingrese la duracion de la capacitación: ","duración inválida. Debe tener máximo 70 caracteres.");
                             String cant_asist = validData("^[0-9]{1,3}$", "Ingrese la cantidad de asistentes: ", "Cantidad de asistentes inválida. Debe ser un número entero menor que 1000.");
                             Capacitacion capacitacion = new Capacitacion(Integer.parseInt(identificador),String.valueOf(usuarioEncontrado), dia,hora, lugar, duracion, Integer.parseInt(cant_asist));
