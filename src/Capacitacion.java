@@ -4,13 +4,13 @@ public class Capacitacion {
     private String dia;
     private String hora;
     private String lugar;
-    private int duracion;
+    private String duracion;
     private int cantidadAsistentes;
 
     public Capacitacion() {
     }
 
-    public Capacitacion(int identificador, String rut, String dia, String hora, String lugar, int duracion, int cantidadAsistentes) {
+    public Capacitacion(int identificador, String rut, String dia, String hora, String lugar, String duracion, int cantidadAsistentes) {
         this.identificador = identificador;
         this.rut = rut;
         this.dia = dia;
@@ -60,11 +60,11 @@ public class Capacitacion {
         this.lugar = lugar;
     }
 
-    public int getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 
