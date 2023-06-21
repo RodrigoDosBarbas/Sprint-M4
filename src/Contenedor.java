@@ -76,6 +76,15 @@ public class Contenedor implements ContenedorImpl{
         return this.getUsuarios();
     }
 
+    public Usuario buscarUsuario(String rut) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getRut().equals(rut)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
     @Override
     public List<Usuario> listarUsuariosPorTipo(String tipo) {
         List<Usuario> clientes = new ArrayList<>();

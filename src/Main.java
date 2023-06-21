@@ -76,10 +76,31 @@ public class Main {
                         System.out.println("Has seleccionado la opcion 3");
                         break;
                     case 4:
-                        System.out.println("Has seleccionado la opcion 3");
+                        String identificador = validData("^[0-9]+$","Ingrese el número identificador: ","número identificador inválido (Debe ser entre 3 y 50 caracteres).");
+                        String rutUsuario = validData("^(?:(?:[0-9]{1,2}(?:\\.[0-9]{3}){0,2})|[0-9]{1,7})$","Ingrese el RUT del usuario: ", "RUT inválido, intente nuevamente (debe ingresar el RUT con puntos y sin dígito verificador).");
+                        Usuario usuarioEncontrado = contenedor.buscarUsuario(rutUsuario);
+                        if (usuarioEncontrado != null) {
+                            String dia = validData("^[a-zA-Z0-9]{1,50}$","Ingrese el día de la capacitación: ","Día inválido. Debe tener entre 3 y 50 caracteres alfanuméricos.");
+                            String hora = validData("^[a-zA-Z0-9]{1,50}$","Ingrese la hora de la capacitación: ","Hora inválida. Debe tener entre 3 y 50 caracteres alfanuméricos.");
+                            String lugar = validData("^[a-zA-Z0-9]{3,70}$","Ingrese el lugar de la capacitación: ","Lugar inválido. Debe tener entre 3 y 50 caracteres alfanuméricos.");
+                            String duracion = validData("^[0-9]+$","Ingrese la duración de la capacitación: ","Duración inválida. Debe tener entre 3 y 10 caracteres numéricos.");
+                            String cant_asist = validData("^[0-9]+$","Ingrese la cantidad de asistentes: ","Cantidad de asistentes inválida. Debe tener entre 3 y 50 caracteres numéricos.");
+                            Capacitacion capacitacion = new Capacitacion(Integer.parseInt(identificador),String.valueOf(usuarioEncontrado), dia,hora, lugar, Integer.parseInt(duracion), Integer.parseInt(cant_asist));
+                            contenedor.almacenarCapacitacion(capacitacion);
+
+                            System.out.println("Capacitación almacenada con éxito.");
+                        } else {
+                            System.out.println("El usuario con el RUT proporcionado no existe.");
+                        }
                         break;
                     case 5:
-                        System.out.println("Has seleccionado la opcion 3");
+                        String rutEliminar = validData("^(?:(?:[0-9]{1,2}(?:\\.[0-9]{3}){0,2})|[0-9]{1,7})$","Ingrese el RUT del usuario: ", "RUT inválido, intente nuevamente (debe ingresar el RUT con puntos y sin dígito verificador).");
+                        boolean eliminado = contenedor.eliminarUsuario(rutEliminar);
+                        if (eliminado) {
+                            System.out.println("Usuario eliminado exitosamente.");
+                        } else {
+                            System.out.println("No se encontró ningún usuario con el RUT ingresado.");
+                        }
                         break;
                     case 6:
                         System.out.println("Listado de usuarios: ");
