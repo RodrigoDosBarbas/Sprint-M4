@@ -1,7 +1,7 @@
 import java.util.List;
 
 public interface ContenedorImpl {
-    public boolean almacenarUsuario(Usuario usuario);
+    public boolean almacenarCliente(Cliente cliente);
     public boolean almacenarProfesional(Profesional profesional);
     public boolean almacenarAdministrativo(Administrativo administrativo);
     public boolean almacenarCapacitacion(Capacitacion capacitacion);

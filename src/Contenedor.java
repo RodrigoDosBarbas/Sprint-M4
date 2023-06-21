@@ -33,8 +33,8 @@ public class Contenedor implements ContenedorImpl{
     }
 
     @Override
-    public boolean almacenarUsuario(Usuario usuario) {
-        this.getUsuarios().add(usuario);
+    public boolean almacenarCliente(Cliente cliente) {
+        this.getUsuarios().add(cliente);
         return true;
     }
 

@@ -15,7 +15,7 @@ public class Cliente extends Usuario{
     public Cliente() {
     }
 
-    public Cliente(String nombre, Date fechaNacimiento, String rut, String apellidos, int telefono, String AFP, int salud, String direccion, String comuna, ArrayList<Capacitacion> capacitaciones, ArrayList<Accidente> accidentes, ArrayList<VisitaTerreno> visitas) {
+    public Cliente(String nombre, Date fechaNacimiento, String rut, String apellidos, int telefono, String AFP, int salud, String direccion, String comuna) {
         super(nombre, fechaNacimiento, rut);
         this.apellidos = apellidos;
         this.telefono = telefono;
@@ -23,9 +23,6 @@ public class Cliente extends Usuario{
         this.salud = salud;
         this.direccion = direccion;
         this.comuna = comuna;
-        this.capacitaciones = capacitaciones;
-        this.accidentes = accidentes;
-        this.visitas = visitas;
     }
 
     public String getApellidos() {
