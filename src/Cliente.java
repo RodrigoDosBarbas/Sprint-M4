@@ -100,15 +100,15 @@ public class Cliente extends Usuario{
     @Override
     public String toString() {
         return "Cliente{" +
-                "apellidos='" + apellidos + '\'' +
+                "nombre='" + this.getNombre() + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", RUT='" + this.getRut() + '\'' +
+                ", Edad='" + this.mostrarEdad() + '\'' +
                 ", telefono=" + telefono +
                 ", AFP='" + AFP + '\'' +
                 ", salud=" + salud +
                 ", direccion='" + direccion + '\'' +
                 ", comuna='" + comuna + '\'' +
-                ", capacitaciones=" + capacitaciones +
-                ", accidentes=" + accidentes +
-                ", visitas=" + visitas +
                 '}';
     }
 
