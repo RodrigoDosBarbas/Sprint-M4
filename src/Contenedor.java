@@ -58,22 +58,26 @@ public class Contenedor implements ContenedorImpl{
 
     @Override
     public boolean eliminarUsuario(String rut) {
-        int index = -1;
-        for (int i = 0; i < this.getUsuarios().size(); i++) {
-            if (this.getUsuarios().get(i).getRut() == rut){
-                index = i;
-            }
+        Usuario usuario = buscarUsuario(rut);
+        if (usuario != null) {
+            usuarios.remove(usuario);
+            return true;
         }
-        if (index == -1){
-            return false;
-        }
-        this.getUsuarios().remove(index);
-        return true;
+        return false;
     }
 
     @Override
     public List<Usuario> listarUsuarios() {
         return this.getUsuarios();
+    }
+
+    public Usuario buscarUsuario(String rut) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getRut().equals(rut)) {
+                return usuario;
+            }
+        }
+        return null;
     }
 
     @Override
