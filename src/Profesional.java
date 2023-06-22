@@ -33,6 +33,9 @@ public class Profesional extends Usuario{
     public String toString() {
         return "Profesional{" +
                 "titulo='" + titulo + '\'' +
+                ", Nombre=" + this.getNombre() +
+                ", Rut=" + this.getRut() +
+                ", edad=" + this.mostrarEdad() +
                 ", fechaIngreso=" + fechaIngreso +
                 '}';
     }

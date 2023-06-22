@@ -29,12 +29,13 @@ public class Administrativo extends Usuario{
         this.experiencia = experiencia;
     }
 
+
     @Override
     public String toString() {
         return "Administrativo{" +
                 "area='" + area + '\'' +
                 ", experiencia='" + experiencia + '\'' +
-                '}';
+                "} " + super.toString();
     }
 
     @Override
